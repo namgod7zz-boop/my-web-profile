@@ -1,0 +1,186 @@
+/* นำเข้าฟอนต์ภาษาไทยสวยๆ จาก Google Fonts */
+@import url('https://googleapis.com');
+
+/* 1. อนิเมชันพื้นหลังไล่เฉดสีขยับไปมาอย่างนุ่มนวล */
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. อนิเมชันการ์ดลอยขึ้นมาตอนเปิดหน้าเว็บ */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 3. อนิเมชันแสงเงาของรูปโปรไฟล์เต้นเป็นจังหวะ */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 154, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 154, 68, 0);
+  }
+}
+
+/* ภารกิจที่ 2: จัดสไตล์ <body> */
+body {
+  background: linear-gradient(-45deg, papayawhip, #ffe0b2, #ffd1dc, #ffecb3);
+  background-size: 400% 400%;
+  animation: bgFlow 12s ease infinite;
+  font-family: 'Prompt', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+header h1 {
+  text-align: center;
+  color: #4a3b32;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* ภารกิจที่ 3: จัดสไตล์ .card */
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 35px rgba(139, 90, 43, 0.15);
+  margin: 15px auto;
+  padding: 32px 25px;
+  border-radius: 24px;
+  animation: cardEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ลูกเล่นแสงเงาวิ่งผ่านการ์ดเมื่อเอาเมาส์ชี้ */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.7s ease;
+}
+
+.card:hover::before {
+  left: 150%;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(139, 90, 43, 0.25);
+}
+
+/* ภารกิจที่ 4: จัดสไตล์รูปภาพ <img> */
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 18px;
+  padding: 4px;
+  background: linear-gradient(45deg, #ff9a44, #fc6076, #ff9a44);
+  animation: pulseGlow 2.5s infinite;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* เอาเมาส์ชี้ที่รูปแล้วรูปขยายพร้อมเอียงเล็กน้อย */
+.card img:hover {
+  transform: scale(1.12) rotate(6deg);
+}
+
+/* ภารกิจที่ 5: จัดสไตล์ชื่อ #profile-name */
+#profile-name {
+  color: #2d241e;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0 8px 0;
+  transition: color 0.3s ease;
+}
+
+.card:hover #profile-name {
+  color: #e66a15;
+}
+
+/* ภารกิจที่ 6: จัดสไตล์ .bio */
+.bio {
+  color: #6e5d53;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.6;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #eedcc5;
+}
+
+.card h3 {
+  color: #4a3b32;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 14px 0;
+  text-align: center;
+}
+
+/* ภารกิจที่ 7: จัดสไตล์ <ul> */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+ul li {
+  background-color: #fff8ee;
+  color: #d97218;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #ffd8a8;
+  box-shadow: 0 2px 5px rgba(217, 114, 24, 0.08);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+/* เอาเมาส์ชี้ที่ป้ายทักษะแล้วเด้งขึ้นและเปลี่ยนสีไล่เฉด */
+ul li:hover {
+  background: linear-gradient(45deg, #ff9a44, #fc6076);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 6px 15px rgba(252, 96, 118, 0.35);
+}
+
+/* เอฟเฟกต์ตอนคลิกกดปุ่มทักษะ */
+ul li:active {
+  transform: scale(0.95);
+}
