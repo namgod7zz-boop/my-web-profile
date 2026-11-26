@@ -1,0 +1,83 @@
+/* ภารกิจที่ 2: จัดสไตล์ <body> */
+body {
+  background-color: papayawhip;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  color: #333333;
+  font-size: 24px;
+}
+
+/* ภารกิจที่ 3: จัดสไตล์ .card */
+.card {
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ภารกิจที่ 4: จัดสไตล์รูปภาพ <img> */
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px;
+  border: 3px solid papayawhip;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ภารกิจที่ 5: จัดสไตล์ชื่อ #profile-name */
+#profile-name {
+  color: #333333;
+  text-align: center;
+  margin: 10px 0 8px 0;
+}
+
+/* ภารกิจที่ 6: จัดสไตล์ .bio */
+.bio {
+  color: #666666;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.card h3 {
+  color: #444444;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* ภารกิจที่ 7: จัดสไตล์ <ul> */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+ul li {
+  background-color: #fff3e0;
+  color: #d87a16;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid #ffe0b2;
+}
